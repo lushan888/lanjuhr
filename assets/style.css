@@ -654,6 +654,29 @@ header.scrolled { box-shadow: var(--shadow); }
 
 .media-link:hover { color: var(--primary); }
 
+/* ====== Station Data Section ====== */
+.station-data-group {
+    margin-bottom: 40px;
+}
+.station-year-block {
+    background: var(--bg-dark);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+}
+.station-year-block h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+.station-year-block .data-number {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--primary);
+}
+
 /* ====== Responsive ====== */
 @media (max-width: 1024px) {
     .business-grid { grid-template-columns: repeat(2, 1fr); }
