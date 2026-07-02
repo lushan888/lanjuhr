@@ -468,10 +468,6 @@ header.scrolled { box-shadow: var(--shadow); }
 /* ====== Responsive ====== */
 @media (max-width: 1024px) {
     .business-grid { grid-template-columns: repeat(2, 1fr); }
-    .g
-/* ====== Continue: Responsive ====== */
-@media (max-width: 1024px) {
-    .business-grid { grid-template-columns: repeat(2, 1fr); }
     .gallery-grid { grid-template-columns: repeat(3, 1fr); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
 }

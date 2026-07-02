@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 var item = document.createElement('div');
                 item.className = 'gallery-item';
                 var imgEl = document.createElement('img');
-                imgEl.src = src;
+                imgEl.src = 'assets/' + src;
                 imgEl.alt = '蓝巨人力工作掠影';
                 item.appendChild(imgEl);
                 item.addEventListener('click', function() {
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function openLightbox(src) {
         var img = document.getElementById('lightboxImg');
-        img.src = src;
+        img.src = 'assets/' + src;
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
