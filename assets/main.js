@@ -97,45 +97,73 @@ document.addEventListener('DOMContentLoaded', function() {
     // ====== 照片墙加载 ======
     var galleryGrid = document.getElementById('galleryGrid');
     if (galleryGrid) {
-        // 尝试加载照片列表
-        var photos = [];
-        // 先从photo_01到photo_20找存在的照片
-        for (var i = 1; i <= 20; i++) {
-            photos.push('photos/photo_' + (i < 10 ? '0' + i : i) + '.jpg');
-        }
-
-        var loadedCount = 0;
-        photos.forEach(function(src, idx) {
-            var img = new Image();
-            img.onload = function() {
-                var item = document.createElement('div');
-                item.className = 'gallery-item';
-                var imgEl = document.createElement('img');
-                imgEl.src = 'assets/' + src;
-                imgEl.alt = '蓝巨人力工作掠影';
-                item.appendChild(imgEl);
-                item.addEventListener('click', function() {
-                    openLightbox(src);
+        // 从photos.json读取照片列表
+        fetch('assets/photos.json')
+            .then(function(response) { return response.json(); })
+            .then(function(photoNames) {
+                var loadedCount = 0;
+                photoNames.forEach(function(name, idx) {
+                    var src = 'photos/' + name;
+                    var img = new Image();
+                    img.onload = function() {
+                        var item = document.createElement('div');
+                        item.className = 'gallery-item';
+                        var imgEl = document.createElement('img');
+                        imgEl.src = 'assets/' + src;
+                        imgEl.alt = '蓝巨人力工作掠影';
+                        imgEl.loading = 'lazy';
+                        item.appendChild(imgEl);
+                        item.addEventListener('click', function() {
+                            openLightbox(src);
+                        });
+                        galleryGrid.appendChild(item);
+                        loadedCount++;
+                    };
+                    img.onerror = function() {
+                        console.warn('照片加载失败:', src);
+                    };
+                    img.src = 'assets/' + src;
                 });
-                galleryGrid.appendChild(item);
-                loadedCount++;
-            };
-            img.onerror = function() {};
-            img.src = 'assets/' + src;
-        });
 
-        // 如果没加载到照片，显示占位
-        setTimeout(function() {
-            if (loadedCount === 0) {
-                for (var i = 1; i <= 4; i++) {
-                    var item = document.createElement('div');
-                    item.className = 'gallery-item';
-                    item.style.cssText = 'background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: flex; align-items: center; justify-content: center; color: white; font-size: 14px;';
-                    item.textContent = '照片 ' + i;
-                    galleryGrid.appendChild(item);
-                }
-            }
-        }, 1000);
+                // 如果都没加载成功，显示占位
+                setTimeout(function() {
+                    if (loadedCount === 0) {
+                        for (var i = 1; i <= 4; i++) {
+                            var item = document.createElement('div');
+                            item.className = 'gallery-item';
+                            item.style.cssText = 'background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: flex; align-items: center; justify-content: center; color: white; font-size: 14px;';
+                            item.textContent = '照片 ' + i;
+                            galleryGrid.appendChild(item);
+                        }
+                    }
+                }, 2000);
+            })
+            .catch(function(err) {
+                console.error('加载照片列表失败:', err);
+                // 降级：直接加载已知存在的照片
+                var fallbackPhotos = ['photo_01.jpg','photo_02.jpg','photo_03.jpg','photo_04.jpg','photo_05.jpg','photo_06.jpg','photo_07.jpg','photo_08.jpg','photo_09.jpg','photo_10.jpg','photo_11.jpg','photo_12.jpg','photo_13.jpg','photo_14.jpg','photo_15.jpg'];
+                var loadedCount = 0;
+                fallbackPhotos.forEach(function(name, idx) {
+                    var src = 'photos/' + name;
+                    var img = new Image();
+                    img.onload = function() {
+                        var item = document.createElement('div');
+                        item.className = 'gallery-item';
+                        var imgEl = document.createElement('img');
+                        imgEl.src = 'assets/' + src;
+                        imgEl.alt = '蓝巨人力工作掠影';
+                        imgEl.loading = 'lazy';
+                        item.appendChild(imgEl);
+                        item.addEventListener('click', function() {
+                            openLightbox(src);
+                        });
+                        galleryGrid.appendChild(item);
+                        loadedCount++;
+                    };
+                    img.onerror = function() {};
+                    img.src = 'assets/' + src;
+                });
+            });
     }
 
     // ====== Lightbox ======
