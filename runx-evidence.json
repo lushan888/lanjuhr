@@ -2,7 +2,34 @@
   "claim_type": "public_support_action",
   "public_url": "https://github.com/runxhq/runx/pull/274",
   "runx_link_found": true,
-  "summary": "Submitted a pull request to the runx repository adding a quickstart example for new users. The PR adds a README showing how to create and run a simple runx skill.",
+  "summary": "Submitted a pull request to the runx repository adding a quickstart example for new users.",
   "audience": "runx developers and new users exploring the project",
-  "why_authentic": "Original contribution to the runx open source project. Adds real value for new users by providing a quickstart guide. PR is public, reviewed, and linked to runx.ai and github.com/runxhq/runx."
+  "why_authentic": "Original contribution to the runx open source project. Adds real value for new users.",
+  "observations": [
+    {
+      "key": "action_type",
+      "value": "pull_request",
+      "description": "Submitted a PR adding a quickstart example README"
+    },
+    {
+      "key": "pr_number",
+      "value": "274",
+      "description": "PR #274 on runxhq/runx"
+    },
+    {
+      "key": "runx_links",
+      "value": "https://github.com/runxhq/runx, https://runx.ai",
+      "description": "The PR references runx project in its README content"
+    },
+    {
+      "key": "platform_permission",
+      "value": "true",
+      "description": "GitHub allows open source contributions - project sharing is encouraged"
+    },
+    {
+      "key": "originality",
+      "value": "original",
+      "description": "Content is original, written specifically for this contribution"
+    }
+  ]
 }
