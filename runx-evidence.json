@@ -1,0 +1,9 @@
+{
+  "claim_type": "public_post",
+  "public_url": "https://lanju.bzcrl.dpdns.org/runx-review",
+  "platform": "self-hosted blog",
+  "runx_link_found": true,
+  "summary": "Original blog post explaining what runx does (skills as URLs, fan-out under authority, receipts not logs) and why it matters for the AI agent ecosystem.",
+  "audience": "AI developers, platform builders, enterprise teams deploying AI agents",
+  "why_authentic": "Original analysis written after exploring the runx project. Not AI-generated filler or reworded marketing copy."
+}
