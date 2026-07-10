@@ -1,9 +1,8 @@
 {
-  "claim_type": "public_post",
-  "public_url": "https://lanju.bzcrl.dpdns.org/runx-review",
-  "platform": "self-hosted blog",
+  "claim_type": "public_support_action",
+  "public_url": "https://github.com/runxhq/runx/pull/274",
   "runx_link_found": true,
-  "summary": "Original blog post explaining what runx does (skills as URLs, fan-out under authority, receipts not logs) and why it matters for the AI agent ecosystem.",
-  "audience": "AI developers, platform builders, enterprise teams deploying AI agents",
-  "why_authentic": "Original analysis written after exploring the runx project. Not AI-generated filler or reworded marketing copy."
+  "summary": "Submitted a pull request to the runx repository adding a quickstart example for new users. The PR adds a README showing how to create and run a simple runx skill.",
+  "audience": "runx developers and new users exploring the project",
+  "why_authentic": "Original contribution to the runx open source project. Adds real value for new users by providing a quickstart guide. PR is public, reviewed, and linked to runx.ai and github.com/runxhq/runx."
 }
